@@ -1,0 +1,52 @@
+@import url(./index.css);
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .error__info {} */
+
+.error__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1;
+  text-align: center;
+  color: #1e1e1e;
+  margin: 0 0 20px;
+}
+
+.error__text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  color: #1e1e1e;
+  margin: 0 0 69px;
+}
+
+.error__link {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1;
+  color: #3369f3;
+  text-align: center;
+  text-decoration: none;
+}
