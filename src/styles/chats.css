@@ -1,0 +1,85 @@
+@import url(./index.css);
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.chats {
+  width: 20vw;
+  background-color: #fbfbfb;
+}
+
+.chats__profileLinkContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chats__profileLink {
+  /* width: 100%; */
+  text-align: right;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: #999999;
+  text-decoration: none;
+  margin: 23px 10px 23px 0;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+.chats__profileLinkArrow {
+  margin: 0 0 0 8px;
+}
+
+.chats__search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chats__searchInput {
+  box-sizing: border-box;
+  width: 90%;
+  height: 32px;
+  background: #efefef;
+  border-radius: 5px;
+  border: none;
+  margin: 0 auto;
+
+  &::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    color: #999;
+    text-align: center;
+  }
+}
+
+.chats__chatList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.messages {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messages__placeholder {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: #999;
+}

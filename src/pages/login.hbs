@@ -1,0 +1,29 @@
+---
+title: Sign in
+formClass: form_login
+css:
+  - form.css
+---
+{{!< base}}
+
+{{> header}}
+<main class="wrapper">
+  <div class="form {{formClass}}">
+    <h1 class="form__title">{{title}}</h1>
+    <form class="form__form">
+      <div class="form__inputs">
+        {{!-- login --}}
+        <label for="login" class="form__inputLabel">Login</label>
+        <input type="text" name="login" class="form__input" />
+        <p class="form__inputError">Invalid login</p>
+        {{!-- password --}}
+        <label for="password" class="form__inputLabel">Password</label>
+        <input type="password" name="password" class="form__input" />
+        <p class="form__inputError">Invalid password</p>
+      </div>
+
+      {{> submitButton/submitButton classes="form__submitButton" title="Enter"}}
+    </form>
+    <a href="./register.hbs" class="form__link">Create account</a>
+  </div>
+</main>
