@@ -1,0 +1,114 @@
+@import url(./index.css);
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  &_login {
+    height: 55vh;
+  }
+
+  &_register {
+    height: 85vh;
+  }
+}
+
+.form__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+
+  color: var(--black);
+  margin: 50px 0 0;
+}
+
+.form__form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 280px;
+  width: 100%;
+}
+
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 0;
+}
+
+.form__inputLabel {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 1;
+  color: var(--gray)
+}
+
+.form__input {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  padding: 8px 0 7px;
+  margin: 0 0 7px;
+  color: var(--black);
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--blue);
+}
+
+.form__inputError {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1;
+  color: #ff2f2f;
+  margin: 0 0 20px;
+}
+
+.form__submitButton {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  width: 280px;
+  height: 37px;
+  margin: 0 0 14px;
+  color: #fff;
+  background: var(--blue);
+  border: none;
+  border-radius: 8px;
+}
+
+.form__link {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--blue);
+  margin: 0 auto 30px;
+}

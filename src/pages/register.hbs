@@ -1,0 +1,45 @@
+---
+title: Create account
+formClass: form_register
+css:
+  - form.css
+---
+{{!< base}}
+
+{{> header}}
+<main class="wrapper">
+  <div class="form {{formClass}}">
+    <h1 class="form__title">{{title}}</h1>
+    <form class="form__form">
+      <div class="form__inputs">
+        {{!-- first_name --}}
+        <label for="first_name" class="form__inputLabel">First name</label>
+        <input type="text" name="first_name" class="form__input" />
+        <p class="form__inputError">Invalid first name</p>
+        {{!-- second_name --}}
+        <label for="second_name" class="form__inputLabel">Second name</label>
+        <input type="text" name="second_name" class="form__input" />
+        <p class="form__inputError">Invalid second name</p>
+        {{!-- login --}}
+        <label for="login" class="form__inputLabel">Login</label>
+        <input type="text" name="login" class="form__input" />
+        <p class="form__inputError">Invalid login</p>
+        {{!-- email --}}
+        <label for="email" class="form__inputLabel">Email</label>
+        <input type="email" name="email" class="form__input" />
+        <p class="form__inputError">Invalid email</p>
+        {{!-- password --}}
+        <label for="password" class="form__inputLabel">Password</label>
+        <input type="password" name="password" class="form__input" />
+        <p class="form__inputError">Invalid password</p>
+        {{!-- phone --}}
+        <label for="phone" class="form__inputLabel">Phone</label>
+        <input type="text" name="phone" class="form__input" />
+        <p class="form__inputError">Invalid phone</p>
+      </div>
+      {{!-- <button type="submit" class="form__submitButton">{{title}}</button> --}}
+      {{> submitButton/submitButton classes="form__submitButton" title="Create account"}}
+    </form>
+    <a href="./login.hbs" class="form__link">Sign in</a>
+  </div>
+</main>
