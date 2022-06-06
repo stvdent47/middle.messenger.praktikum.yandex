@@ -1,0 +1,30 @@
+---
+title: Chats
+css:
+  - chats.css
+---
+{{!< base}}
+
+{{> header}}
+<main class="wrapper">
+  <section class="chats">
+    <div class="chats__profileLinkContainer">
+      <a href="./profile.hbs" class="chats__profileLink">
+        Profile
+        <img src="../static/img/profileLinkArrow.svg" alt="" class="chats__profileLinkArrow" />
+      </a>
+    </div>
+    <div class="chats__search">
+      <input type="text" class="chats__searchInput" placeholder="Search" />
+    </div>
+    <div class="chats__chatList">
+      <p class="messages__placeholder">A list of chats will be here</p>
+    </div>
+  </section>
+
+  <section class="messages">
+    <p class="messages__placeholder">
+      Choose a chat to send a message
+    </p>
+  </section>
+</main>

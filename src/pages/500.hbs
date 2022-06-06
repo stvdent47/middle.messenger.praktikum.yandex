@@ -1,0 +1,20 @@
+---
+title: Server error
+css:
+  - error.css
+errorCode: 500
+errorText: Server error
+---
+{{!< base}}
+
+{{> header}}
+<main class="wrapper">
+  <div class="error">
+    <section class="error__info">
+      <h1 class="error__title">{{errorCode}}</h1>
+      <h2 class="error__text">{{errorText}}</h2>
+    </section>
+
+    <a href="./chats.hbs" class="error__link">Back to chats</a>
+  </div>
+</main>
