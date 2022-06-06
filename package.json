@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel src/pages/login.hbs --no-cache && parcel watch ./*",
     "build": "rm -rf dist && parcel build src/pages/login.hbs --no-cache --public-url ./",
-    "start": "yarn build && node ./src/app.js"
+    "start": "rm -rf dist && parcel build src/pages/login.hbs --no-cache --public-url ./ && node ./src/app.js"
   },
   "repository": {
     "type": "git",
