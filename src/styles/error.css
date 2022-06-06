@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
-/* .error__info {} */
+.error__info {}
 
 .error__title {
   font-family: 'Inter';
@@ -25,7 +25,7 @@
   font-size: 40px;
   line-height: 1;
   text-align: center;
-  color: #1e1e1e;
+  color: var(--black);
   margin: 0 0 20px;
 }
 
@@ -36,7 +36,7 @@
   font-size: 20px;
   line-height: 1;
   text-align: center;
-  color: #1e1e1e;
+  color: var(--black);
   margin: 0 0 69px;
 }
 
@@ -46,7 +46,7 @@
   font-weight: 500;
   font-size: 11px;
   line-height: 1;
-  color: #3369f3;
+  color: var(--blue);
   text-align: center;
   text-decoration: none;
 }

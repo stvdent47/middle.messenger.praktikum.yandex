@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: #efefef;
+  background-color: var(--lightGray);
 
   &::after {
     content: '';
@@ -35,7 +35,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-image: url(); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 26px;
@@ -61,7 +60,7 @@
   font-size: 16px;
   line-height: 1;
   text-align: center;
-  color: #1e1e1e;
+  color: var(--black);
   margin: 0 0 60px;
 }
 
@@ -74,7 +73,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid var(--borderGray);
 
   &:last-of-type {
     border: none;
@@ -87,7 +86,7 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 1;
-  color: #1e1e1e;
+  color: var(--black);
 }
 
 .profile__rowValue {
@@ -96,7 +95,7 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 1;
-  color: #999999;
+  color: var(--gray);
 }
 
 .profile__buttons {
@@ -114,12 +113,12 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 1;
-  color: #3369f3;
+  color: var(--blue);
   width: 100%;
   padding: 10px 0;
   text-align: start;
   border: none;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid var(--borderGray);
 
   &_signOut {
     color: #f00;
@@ -140,9 +139,9 @@
   left: 0;
   width: 64px;
   height: 100vh;
-  background-color: #fbfbfb;
+  background-color: var(--backgroundGray);
   border: none;
-  border-right: 1px solid #eaeaea;
+  border-right: 1px solid var(--borderGray);
   display: flex;
   flex-direction: column;
   justify-content: center;

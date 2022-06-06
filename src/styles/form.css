@@ -35,7 +35,7 @@
   line-height: 1;
   text-align: center;
 
-  color: #1e1e1e;
+  color: var(--black);
   margin: 50px 0 0;
 }
 
@@ -60,7 +60,7 @@
   font-weight: 500;
   font-size: 9px;
   line-height: 1;
-  color: #999999;
+  color: var(--gray)
 }
 
 .form__input {
@@ -71,10 +71,10 @@
   line-height: 1;
   padding: 8px 0 7px;
   margin: 0 0 7px;
-  color: #1e1e1e;
+  color: var(--black);
   outline: none;
   border: none;
-  border-bottom: 1px solid #3369f3;
+  border-bottom: 1px solid var(--blue);
 }
 
 .form__inputError {
@@ -97,7 +97,7 @@
   height: 37px;
   margin: 0 0 14px;
   color: #fff;
-  background: #3369f3;
+  background: var(--blue);
   border: none;
   border-radius: 8px;
 }
@@ -109,6 +109,6 @@
   font-size: 11px;
   line-height: 1;
   text-decoration: none;
-  color: #3369f3;
+  color: var(--blue);
   margin: 0 auto 30px;
 }
