@@ -48,7 +48,7 @@ export class RegisterPage extends Block {
     });
   }
 
-  render() {
+  protected render(): string {
     return `
       <div>
         <main class="wrapper">

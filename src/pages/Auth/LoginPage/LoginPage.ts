@@ -48,7 +48,7 @@ export class LoginPage extends Block {
     });
   }
 
-  render() {
+  protected render(): string {
     return `
         <main class="wrapper">
           <div class="form form__login">
