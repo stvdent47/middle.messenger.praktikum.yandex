@@ -24,4 +24,6 @@
 
 Pull requests:
 
+## [Sprint 2 Pull Request](https://github.com/stvdent47/middle.messenger.praktikum.yandex/pull/4)
+
 ## [Sprint 1 Pull Request](https://github.com/stvdent47/middle.messenger.praktikum.yandex/pull/3)
