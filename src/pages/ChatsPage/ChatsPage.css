@@ -1,7 +1,8 @@
-.wrapper {
+.wrapperChat {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: row;
 }
 
 .chats {
@@ -16,7 +17,6 @@
 
 .chats__profileLink {
   text-align: right;
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -39,7 +39,6 @@
 }
 
 .chats__searchInput {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -55,7 +54,6 @@
 }
 
 .chats__searchInput::placeholder {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -66,8 +64,10 @@
 
 .chats__chatList {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin: 14px 0 0;
+  padding: 0;
 }
 
 .messages {
@@ -78,7 +78,6 @@
 }
 
 .messages__placeholder {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;

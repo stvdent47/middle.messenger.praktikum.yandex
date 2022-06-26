@@ -17,8 +17,6 @@ export class ErrorPage extends Block {
   protected render(): string {
     return `
       <div>
-        {{{ Header }}}
-
         <main class="wrapper">
           <div class="error">
             <div class="error__info">

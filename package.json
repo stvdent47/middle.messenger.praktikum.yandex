@@ -4,15 +4,15 @@
   "description": "### Откройте pull request в ветку main из ветки, где вы разрабатывали проект, и добавьте ссылку на этот pr в README.md в ветке main.  ### ВАЖНО: pull request должен называться “Sprint i” (i — номер спринта).",
   "scripts": {
     "dev": "parcel src/index.html --no-source-maps",
-    "devPrev": "parcel src/pages/login.hbs --no-cache && parcel watch ./*",
-    "build": "rm -rf dist && parcel build src/pages/login.hbs --no-cache --public-url ./",
-    "start": "rm -rf dist && parcel build src/pages/login.hbs --no-cache --public-url ./ && node ./src/app.js"
+    "build": "rm -rf dist && parcel build src/index.html --no-source-maps",
+    "start": "rm -rf dist && parcel build src/index.html --no-source-maps --no-cache && node ./src/app.js"
   },
   "alias": {
     "components": "./src/components",
     "components-ui": "./src/components-ui",
     "core": "./src/core",
     "data": "./src/data",
+    "helpers": "./src/helpers",
     "pages": "./src/pages",
     "static": "./src/static",
     "styles": "./src/styles"
@@ -28,6 +28,9 @@
     "@anikin/parcel-transformer-handlebars": "1.0.9",
     "@types/node": "18.0.0",
     "@types/uuid": "8.3.4",
+    "stylelint": "14.9.1",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-standard": "26.0.0",
     "typescript": "4.7.4"
   },
   "dependencies": {
@@ -42,5 +45,12 @@
   "engines": {
     "npm": "8.11.0",
     "node": "16.15.1"
+  },
+  "targets": {
+    "default": {
+      "engines": {
+        "browsers": ">= 50%"
+      }
+    }
   }
 }

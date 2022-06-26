@@ -23,7 +23,7 @@ export class Block<P = any> {
   protected children: { [id: string]: Block } = {};
   protected readonly props: P;
   // protected state: any = {};
-  protected refs: { [key: string]: HTMLElement } = {};
+  refs: { [key: string]: Block } = {};
   static componentName: string;
   eventBus: () => EventBus<Events>;
 
@@ -56,7 +56,7 @@ export class Block<P = any> {
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
-  _getPropsAndChildren(propsAndChildren: Record<string, Block | any>) {
+  _getPropsAndChildren(propsAndChildren: Record<string, Block | unknown>) {
     const props: Record<string, unknown> = {};
     const children: Record<string, Block> = {};
 
@@ -68,7 +68,6 @@ export class Block<P = any> {
       }
     });
 
-    console.log({ props, children });
     return { props, children };
   }
 

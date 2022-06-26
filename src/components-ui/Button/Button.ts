@@ -1,7 +1,5 @@
 import { Block } from 'core/Block';
 
-// import './Button.css';
-
 type ButtonProps = {
   text: string;
   onClick: () => void;

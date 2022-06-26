@@ -10,7 +10,6 @@
 .profile {
   width: 510px;
 }
-
 /* .profile__displayInfo {} */
 
 .profile__avatarContainer {
@@ -36,7 +35,7 @@
     background-position: center;
     background-size: 26px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 80%);
     opacity: 0;
   }
 
@@ -46,11 +45,9 @@
     opacity: 0.5;
   }
 }
-
 /* .profile__avatar {} */
 
 .profile__displayName {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -64,11 +61,19 @@
   width: 100%;
 }
 
-.profile__mainInfoRow {
+.profile__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__inputContainer {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  align-items: center;
+  padding: 20px 0;
   border-bottom: 1px solid var(--borderGray);
 
   &:last-of-type {
@@ -76,22 +81,39 @@
   }
 }
 
-.profile__rowName {
-  font-family: 'Inter';
+.profile__inputLabel {
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 1;
   color: var(--black);
+  width: 110px;
 }
 
-.profile__rowValue {
-  font-family: 'Inter';
+.profile__input {
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 1;
   color: var(--gray);
+  background-color: #fff;
+  text-align: right;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.profile__inputError {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0 0 5px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1;
+  color: #ff2f2f;
 }
 
 .profile__buttons {
@@ -104,7 +126,6 @@
 
 .profile__button {
   background-color: #fff;
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -129,6 +150,20 @@
   }
 }
 
+.profile__buttonSave {
+  width: 280px;
+  height: 37px;
+  background-color: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin: 60px auto 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .goBackButton {
   position: absolute;
   top: 0;
@@ -142,8 +177,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-image: url('../../static/img/profileGoBackIcon.svg');
+  background-image: url(../../static/img/buttonIconArrow.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 28px;

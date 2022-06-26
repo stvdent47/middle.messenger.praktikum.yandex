@@ -1,5 +1,3 @@
-/* @import url(../../index.css); */
-
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -14,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 14%);
   border-radius: 12px;
   box-sizing: border-box;
 }
@@ -28,13 +26,11 @@
 }
 
 .form__title {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
   text-align: center;
-
   color: var(--black);
   margin: 50px 0 0;
 }
@@ -54,8 +50,12 @@
   margin: 40px 0 0;
 }
 
+.form__inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .form__inputLabel {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 9px;
@@ -64,7 +64,6 @@
 }
 
 .form__input {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -78,7 +77,6 @@
 }
 
 .form__inputError {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 8px;
@@ -88,7 +86,6 @@
 }
 
 .form__submitButton {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -103,7 +100,6 @@
 }
 
 .form__link {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 11px;

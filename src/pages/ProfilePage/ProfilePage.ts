@@ -1,4 +1,6 @@
 import { Block } from 'core/Block';
+import { mockUser } from 'data/user';
+import { validateRule, ValidationRule } from 'helpers/validation';
 
 import './ProfilePage.css';
 
@@ -22,14 +24,52 @@ export class ProfilePage extends Block {
     displayName,
     phone,
   }: ProfilePageProps) {
-    super({ email, login, firstName, secondName, displayName, phone });
+    super({
+      email,
+      login,
+      firstName,
+      secondName,
+      displayName,
+      phone,
+      events: {
+        submit: (evt: SubmitEvent) => {
+          evt.preventDefault();
+
+          const inputs: NodeListOf<HTMLInputElement> | undefined =
+            this.element?.querySelectorAll('input');
+          let isValid = true;
+          const data: Record<string, string> = {};
+          if (inputs) {
+            inputs.forEach((input) => {
+              const { name, value } = input;
+
+              const errorText = validateRule(
+                ValidationRule[name as keyof typeof ValidationRule],
+                value,
+              );
+
+              if (errorText) {
+                isValid = false;
+                this.refs[name].refs.errorText.setProps({
+                  errorText,
+                });
+              } else {
+                data[name] = value;
+              }
+            });
+          }
+
+          if (isValid) {
+            console.log({ data });
+          }
+        },
+      },
+    });
   }
 
   protected render(): string {
     return `
       <div>
-        {{{ Header }}}
-
         <main class="wrapper">
           <div class="profile">
             <section class="profile__displayInfo">
@@ -42,30 +82,61 @@ export class ProfilePage extends Block {
             </section>
 
             <section class="profile__mainInfo">
-              <div class="profile__mainInfoRow">
-                <span class="profile__rowName">Email</span>
-                <span class="profile__rowValue">{{ email }}</span>
-              </div>
-              <div class="profile__mainInfoRow">
-                <span class="profile__rowName">Login</span>
-                <span class="profile__rowValue">{{ login }}</span>
-              </div>
-              <div class="profile__mainInfoRow">
-                <span class="profile__rowName">First name</span>
-                <span class="profile__rowValue">{{ firstName }}</span>
-              </div>
-              <div class="profile__mainInfoRow">
-                <span class="profile__rowName">Second name</span>
-                <span class="profile__rowValue">{{ secondName }}</span>
-              </div>
-              <div class="profile__mainInfoRow">
-                <span class="profile__rowName">Display name</span>
-                <span class="profile__rowValue">{{ displayName }}</span>
-              </div>
-              <div class="profile__mainInfoRow">
-                <span class="profile__rowName">Phone</span>
-                <span class="profile__rowValue">{{ phone }}</span>
-              </div>
+              <form class="profile__form">
+                {{{ InputField
+                  name="email"
+                  ref="email"
+                  labelText="Email"
+                  className="profile"
+                  validationRule="${ValidationRule.email}"
+                  value="${mockUser.email}"
+                }}}
+                {{{ InputField
+                  name="login"
+                  ref="login"
+                  labelText="Login"
+                  className="profile"
+                  validationRule="${ValidationRule.login}"
+                  value="${mockUser.login}"
+                }}}
+                {{{ InputField
+                  name="first_name"
+                  ref="first_name"
+                  labelText="First name"
+                  className="profile"
+                  validationRule="${ValidationRule.first_name}"
+                  value="${mockUser.firstName}"
+                }}}
+                {{{ InputField
+                  name="second_name"
+                  ref="second_name"
+                  labelText="Second name"
+                  className="profile"
+                  validationRule="${ValidationRule.second_name}"
+                  value="${mockUser.secondName}"
+                }}}
+                {{{ InputField
+                  name="display_name"
+                  ref="display_name"
+                  labelText="Display name"
+                  className="profile"
+                  validationRule="${ValidationRule.display_name}"
+                  value="${mockUser.displayName}"
+                }}}
+                {{{ InputField
+                  name="phone"
+                  ref="phone"
+                  labelText="Phone"
+                  className="profile"
+                  validationRule="${ValidationRule.phone}"
+                  value="${mockUser.phone}"
+                }}}
+                {{{ Button
+                  text="Save"
+                  type="submit"
+                  className="profile__buttonSave"
+                }}}
+              </form>
             </section>
 
             <section class="profile__buttons">

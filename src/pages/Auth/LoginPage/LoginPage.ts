@@ -1,4 +1,5 @@
 import { Block } from 'core/Block';
+import { validateRule, ValidationRule } from 'helpers/validation';
 
 import '../index.css';
 
@@ -13,43 +14,70 @@ export class LoginPage extends Block {
       events: {
         submit: (evt: SubmitEvent) => {
           evt.preventDefault();
-          console.log('login submit');
+
+          const inputs: NodeListOf<HTMLInputElement> | undefined =
+            this.element?.querySelectorAll('input');
+          let isValid = true;
+          const data: Record<string, string> = {};
+
+          if (inputs) {
+            inputs.forEach((input) => {
+              const { name, value } = input;
+
+              const errorMessage = validateRule(
+                ValidationRule[name as keyof typeof ValidationRule],
+                value,
+              );
+
+              if (errorMessage) {
+                isValid = false;
+                this.refs[name].refs.errorText.setProps({
+                  errorText: errorMessage,
+                });
+              } else {
+                data[name] = value;
+              }
+            });
+
+            if (isValid) {
+              console.log({ data });
+            }
+          }
         },
       },
     });
-
-    this.setProps({
-      onClickButton: this.onClickButton.bind(this),
-    });
-  }
-
-  onClickButton(evt: SubmitEvent) {
-    evt.preventDefault();
-    console.log('button click');
   }
 
   render() {
     return `
-      <div>
-        {{{ Header }}}
-
         <main class="wrapper">
           <div class="form form__login">
             <h1 class="form__title">Sign in</h1>
             <form class="form__form">
               <div class="form__inputs">
-                <label for="login" class="form__inputLabel">Login</label>
-                <input type="text" name="login" class="form__input" />
-                <p class="form__inputError">Invalid login</p>
-                <label for="password" class="form__inputLabel">Password</label>
-                <input type="password" name="password" class="form__input" />
-                <p class="form__inputError">Invalid password</p>
+                {{{ InputField
+                  name="login"
+                  ref="login"
+                  labelText="Login"
+                  errorText="Invalid login"
+                  className="form"
+                  validationRule="${ValidationRule.login}"
+                }}}
+
+                {{{ InputField
+                  name="password"
+                  ref="password"
+                  inputType="password"
+                  labelText="Password"
+                  errorText="Invalid password"
+                  className="form"
+                  validationRule="${ValidationRule.password}"
+                }}}
               </div>
               {{{ Button text="Login" className="form__submitButton" type="submit" }}}
             </form>
             <a href="../RegisterPage/register.html" class="form__link">Create account</a>
           </div>
-        </main>
-      </div>`;
+        </main>`;
   }
 }

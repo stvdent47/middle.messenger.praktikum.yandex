@@ -13,11 +13,9 @@
   align-items: center;
   justify-content: center;
 }
-
 /* .error__info {} */
 
 .error__title {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -28,7 +26,6 @@
 }
 
 .error__text {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -39,7 +36,6 @@
 }
 
 .error__link {
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
