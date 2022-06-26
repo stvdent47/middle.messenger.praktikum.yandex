@@ -1,0 +1,17 @@
+@import url(styles/vendor/normalize.css);
+@import url(styles/vendor/fonts/Inter/inter.css);
+
+:root {
+  --backgroundGray: #fbfbfb;
+  --darkGray: #f8f8f8;
+  --lightGray: #efefef;
+  --gray: #999;
+  --borderGray: #eaeaea;
+  --black: #1e1e1e;
+  --blue: #3369f3;
+  --lightBlue: #e4edfd;
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
