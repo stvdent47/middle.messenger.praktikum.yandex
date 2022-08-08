@@ -9,7 +9,11 @@ type BlockMeta<P = any> = {
 
 type Events = Values<typeof Block.EVENTS>;
 
-export class Block<P = any> {
+export class Block<
+  P extends {
+    events?: Record<string, () => void>;
+  } = {},
+> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
