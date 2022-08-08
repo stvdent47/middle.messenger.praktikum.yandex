@@ -1,0 +1,86 @@
+.wrapperChat {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.chats {
+  width: 20vw;
+  background-color: var(--backgroundGray);
+}
+
+.chats__profileLinkContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chats__profileLink {
+  text-align: right;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--gray);
+  text-decoration: none;
+  margin: 23px 10px 23px 0;
+  display: flex;
+  align-items: center;
+}
+
+.chats__profileLinkArrow {
+  margin: 0 0 0 8px;
+}
+
+.chats__search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chats__searchInput {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  box-sizing: border-box;
+  width: 90%;
+  height: 32px;
+  background: var(--lightGray);
+  border-radius: 5px;
+  border: none;
+  margin: 0 auto;
+  outline: none;
+}
+
+.chats__searchInput::placeholder {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--gray);
+  text-align: center;
+}
+
+.chats__chatList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 14px 0 0;
+  padding: 0;
+}
+
+.messages {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messages__placeholder {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--gray);
+}
