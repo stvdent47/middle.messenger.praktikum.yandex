@@ -1,0 +1,30 @@
+.modal__createChat {
+  position: relative;
+  width: 340px;
+  height: 257px;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 14%);
+  border-radius: 12px;
+}
+
+.modal__createChatTitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--black);
+  text-align: center;
+  margin: 40px 0 50px;
+  padding: 0;
+}
+
+.createChatForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: none;
+}
+/* .createChatFormInput {
+}
+.createChatForm__submitButton {
+} */

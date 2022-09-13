@@ -1,11 +1,20 @@
 import { Block } from 'core/Block';
+import { Router } from 'core/BrowseRouter';
+import { Store } from 'core/Store';
 import { validateRule, ValidationRule } from 'helpers/validation';
+import { withRouter } from 'hocs/withRouter';
+import { withStore } from 'hocs/withStore';
+import { login } from 'services/auth';
+import { Screens } from 'utils/screenList';
 
 import '../index.css';
 
-type LoginPageProps = {};
+type LoginPageProps = {
+  router: Router;
+  store: Store<AppState>;
+};
 
-export class LoginPage extends Block {
+class LoginPage extends Block<LoginPageProps> {
   static componentName: string = 'LoginPage';
 
   constructor(props: LoginPageProps) {
@@ -40,12 +49,22 @@ export class LoginPage extends Block {
             });
 
             if (isValid) {
-              console.log({ data });
+              // debugger;
+              this.props.store.dispatch(login, data);
             }
           }
         },
       },
     });
+  }
+
+  componentDidMount(): void {
+    if (
+      this.props.store.getState().isAppInitiated &&
+      this.props.store.getState().user
+    ) {
+      this.props.router.go(`/${Screens.Chats}`);
+    }
   }
 
   protected render(): string {
@@ -74,10 +93,21 @@ export class LoginPage extends Block {
                   validationRule="${ValidationRule.password}"
                 }}}
               </div>
-              {{{ Button text="Login" className="form__submitButton" type="submit" }}}
+              {{{ Button
+                text="Login"
+                className="form__submitButton"
+                type="submit"
+              }}}
             </form>
-            <a href="../RegisterPage/register.html" class="form__link">Create account</a>
+            {{{ Link
+              router=router
+              to="/${Screens.Register}"
+              text="Create account"
+              className="form__link"
+            }}}
           </div>
         </main>`;
   }
 }
+
+export default withRouter(withStore(LoginPage));

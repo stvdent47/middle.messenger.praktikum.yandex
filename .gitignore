@@ -1,4 +1,6 @@
 .cache
+.env
+.github
 .parcel-cache
 dist
 node_modules

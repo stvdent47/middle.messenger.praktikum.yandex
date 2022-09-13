@@ -1,0 +1,39 @@
+.updateUserAvatarModal {
+  position: relative;
+  width: 340px;
+  height: 257px;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 14%);
+  border-radius: 12px;
+}
+
+.updateUserAvatarForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.updateUserAvatarForm__input {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #3369f3;
+}
+
+.updateUserAvatarForm__submitButton {
+  width: 280px;
+  height: 37px;
+  background-color: var(--blue);
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  margin: 30px 0 0;
+}

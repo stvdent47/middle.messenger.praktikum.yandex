@@ -1,3 +1,5 @@
+@import url(../../components/index.css);
+
 .wrapperChat {
   width: 100vw;
   height: 100vh;
@@ -10,9 +12,35 @@
   background-color: var(--backgroundGray);
 }
 
+.chats__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .chats__profileLinkContainer {
   display: flex;
   justify-content: flex-end;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.chats__buttonNewChat {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--gray);
+  background-color: transparent;
+  border: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .chats__profileLink {
@@ -29,7 +57,7 @@
 }
 
 .chats__profileLinkArrow {
-  margin: 0 0 0 8px;
+  margin: 0 10px 0 0;
 }
 
 .chats__search {
@@ -60,14 +88,6 @@
   line-height: 1;
   color: var(--gray);
   text-align: center;
-}
-
-.chats__chatList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 14px 0 0;
-  padding: 0;
 }
 
 .messages {
