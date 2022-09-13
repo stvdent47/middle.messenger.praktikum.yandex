@@ -1,0 +1,1 @@
+export { UpdateUserAvatarModal } from './UpdateUserAvatarModal';
