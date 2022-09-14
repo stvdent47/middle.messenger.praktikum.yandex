@@ -49,7 +49,6 @@ export class ChatFeed extends Block<ChatFeedProps> {
       },
       onDeleteChatClick: () => {
         // TODO — сделать модалку подтверждения
-        console.log('delete chat', this.props.chatId);
         this.props.store.dispatch(
           deleteChat,
           this.props.store.getState().chats.currentChat.chatId,

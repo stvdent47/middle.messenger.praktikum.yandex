@@ -25,7 +25,8 @@ export const userAPI = {
     HTTPTransport.post('/user/search', {
       ...options,
       data: JSON.stringify({ login }),
-      // TODO — сделать отображение списка найденных пользователей при добавлении в чат
+      // TODO — сделать отображение списка найденных пользователей при добавлении в чат,
+      // обработать ситуацию, когда ни один пользователь не найден
     }).then(({ response }) => new User(JSON.parse(response)[0])),
 
   updateUser: (data: UpdateUserInput) =>

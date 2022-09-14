@@ -8,5 +8,5 @@ app.use('/', express.static(path.join(__dirname, '../dist/')));
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
-  console.log(`listening at ${PORT}`);
+  console.info(`listening at ${PORT}`);
 });

@@ -50,7 +50,6 @@ class RegisterPage extends Block<RegisterPageProps> {
           }
 
           if (isValid) {
-            console.log({ data });
             this.props.store.dispatch(signup, data);
           }
         },

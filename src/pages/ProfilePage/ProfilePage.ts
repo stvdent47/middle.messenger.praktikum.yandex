@@ -73,7 +73,6 @@ class ProfilePage extends Block<ProfilePageProps> {
         });
       },
       toggleUpdateUserAvatarModal: () => {
-        console.log('toggle');
         this.setState({
           isUpdateUserAvatarModalOpen: !this.state.isUpdateUserAvatarModalOpen,
         });
@@ -100,7 +99,7 @@ class ProfilePage extends Block<ProfilePageProps> {
     const avatarUrl = user?.avatar
       ? `https://ya-praktikum.tech/api/v2/resources${user.avatar}`
       : profileNoAvatar;
-    console.log({ user, avatarUrl });
+
     return `
         <main class="wrapperProfile">
           <div class="profile">

@@ -1,6 +1,8 @@
 .cache
-.env
 .github
 .parcel-cache
 dist
 node_modules
+
+.env
+.DS_Store

@@ -26,7 +26,7 @@ class ChangePasswordPage extends Block<ChangePasswordPageProps> {
       events: {
         submit: (evt: SubmitEvent) => {
           evt.preventDefault();
-          console.log({ evt });
+
           const inputs: NodeListOf<HTMLInputElement> | undefined =
             this.element?.querySelectorAll('input');
           let isValid = true;

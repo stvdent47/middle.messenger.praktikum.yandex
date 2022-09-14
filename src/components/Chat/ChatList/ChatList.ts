@@ -47,7 +47,7 @@ export class ChatList extends Block<ChatListProps> {
               (chat) => `
                 {{{ ChatButton
                   chatId=${chat.id}
-                  avatar="${chat.avatar}"
+                  avatar=${chat.avatar}
                   content="${chat.lastMessage?.content}"
                   isLastMessageMine=${
                     userLogin === chat.lastMessage?.user.login
