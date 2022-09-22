@@ -32,13 +32,13 @@ export async function login(
   const response = await authAPI.login(action);
 
   if (responseHasError(response)) {
-    dispatch({ isLoading: false, loginFormError: response.reason });
+    dispatch({ isLoading: false });
     return;
   }
 
   const responseUser = await userAPI.getUser();
 
-  dispatch({ isLoading: false, loginFormError: null });
+  dispatch({ isLoading: false });
 
   if (responseHasError(responseUser)) {
     dispatch(signOut);
@@ -49,9 +49,7 @@ export async function login(
     user: responseUser,
   });
 
-  console.log('before login');
   window.router.go(`/${Screens.Chats}`);
-  console.log('after login');
 }
 
 export async function signOut(dispatch: Dispatch<AppState>) {

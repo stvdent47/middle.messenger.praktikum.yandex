@@ -10,7 +10,6 @@ import { getScreenComponent, Screens } from 'utils/screenList';
 import './index.css';
 
 [...ComponenstUI, ...Components].forEach((Component) => {
-  console.log({ componentName: Component.componentName });
   registerComponent(Component as BlockClass);
 });
 
@@ -28,13 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.router = router;
 
-  // setTimeout(() => {
-  //   store.dispatch(initApp);
-  // }, 0);
-
   store.on('changed', (prevState, nextState) => {
     if (process.env.SITE === 'dev') {
-      console.log(
+      console.info(
         '%cstore updated',
         'background: #222; color: #bada55',
         { prevState },

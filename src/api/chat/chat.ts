@@ -22,10 +22,17 @@ const options = {
 };
 
 export const chatAPI = {
-  getChats: () =>
-    HTTPTransport.get('/chats', { ...options }).then(({ response }) =>
-      (JSON.parse(response) || []).map((dto: ChatViewDto) => new ChatView(dto)),
-    ),
+  getChats: async () => {
+    try {
+      const { response } = await HTTPTransport.get('/chats', { ...options });
+
+      return (JSON.parse(response) || []).map(
+        (dto: ChatViewDto) => new ChatView(dto),
+      );
+    } catch (err) {
+      console.error({ err });
+    }
+  },
 
   createChat: (data: CreateChatInput) =>
     HTTPTransport.post('/chats', {

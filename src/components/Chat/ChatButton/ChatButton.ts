@@ -6,6 +6,7 @@ const chatNoAvatar = require('static/img/chatNoAvatar.svg');
 
 type ChatButtonProps = {
   chatId: number;
+  // TODO — проверить, когда сделаю функционал изменения аватарки чата, какой тип приходит
   avatar: Nullable<string>;
   content: string;
   isLastMessageMine: boolean;
@@ -40,7 +41,7 @@ export class ChatButton extends Block<ChatButtonProps> {
       <li class="chatButton">
         <img
           src="
-            {{#if chat.avatar}}
+            {{#if ${this.props.avatar !== null}}}
               {{ avatar }}
             {{else}}
               ${chatNoAvatar}

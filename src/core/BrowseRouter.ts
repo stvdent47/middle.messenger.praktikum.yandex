@@ -36,14 +36,7 @@ export class Route<P = any> {
   }
 
   render() {
-    if (!this.#block) {
-      this.#block = new this.#blockClass(this.#props as P);
-      renderDOM('#root', this.#block!);
-
-      return;
-    }
-
-    this.#block.show();
+    renderDOM('#root', new this.#blockClass(this.#props as P));
   }
 }
 
@@ -51,7 +44,6 @@ export class Router {
   static __instance: Router;
   #routes: Route[] = [];
   #history: History = window.history;
-  #currentRoute: Nullable<Route> = null;
 
   constructor() {
     if (Router.__instance) {
@@ -84,18 +76,12 @@ export class Router {
 
   #onRoute(pathname: string) {
     const route = this.getRoute(pathname);
+
     if (!route) {
       return;
     }
 
-    if (this.#currentRoute && this.#currentRoute !== route) {
-      this.#currentRoute.leave();
-    }
-
-    if (route) {
-      this.#currentRoute = route;
-      route.render();
-    }
+    route.render();
   }
 
   go(pathname: string, state: unknown = {}) {

@@ -27,5 +27,5 @@ export const authAPI = {
       data: JSON.stringify(new LoginRequestInputDto(data)),
     }),
 
-  signOut: () => HTTPTransport.post('/auth/logout', { ...options }),
+  signOut: () => HTTPTransport.post('/auth/logout', { withCredentials: true }),
 };

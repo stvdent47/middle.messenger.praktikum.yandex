@@ -43,7 +43,6 @@ export async function deleteChat(
   const {
     result: { id },
   } = await chatAPI.deleteChat({ chatId: action });
-  console.log({ id });
 
   dispatch({
     isLoading: false,
@@ -106,7 +105,7 @@ export async function getChatUsers(
   dispatch({ isLoading: true });
 
   const response = await chatAPI.getChatUsers(String(action));
-  console.log({ response });
+
   if (responseHasError(response)) {
     dispatch({ isLoading: false });
     return;
@@ -209,7 +208,7 @@ export async function establishConnection(
   );
 
   ws.addEventListener('open', () => {
-    console.log('Соединение установлено');
+    console.info('Соединение установлено');
 
     dispatch({ ws });
 
@@ -223,17 +222,17 @@ export async function establishConnection(
 
   ws.addEventListener('close', (event) => {
     if (event.wasClean) {
-      console.log('Соединение закрыто чисто');
+      console.info('Соединение закрыто чисто');
     } else {
-      console.log('Обрыв соединения');
+      console.info('Обрыв соединения');
     }
 
-    console.log(`Код: ${event.code} | Причина: ${event.reason}`);
+    console.info(`Код: ${event.code} | Причина: ${event.reason}`);
   });
 
   ws.addEventListener('message', (event) => {
     const data = JSON.parse(event.data);
-    console.log('Получены данные', { data });
+    console.info('Получены данные', { data });
 
     if (Array.isArray(data)) {
       const filteredMessages =
@@ -264,11 +263,9 @@ export async function establishConnection(
     }
   });
 
-  ws.addEventListener('error', (_event) => {
-    console.log(
-      'Ошибка',
-      // event.message
-    );
+  ws.addEventListener('error', (event) => {
+    // @ts-ignore
+    console.error('Ошибка', event.message);
   });
 
   setInterval(() => {
