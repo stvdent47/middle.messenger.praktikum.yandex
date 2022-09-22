@@ -7,7 +7,7 @@ type ButtonProps = {
   type?: string;
 };
 
-export class Button extends Block {
+export class Button extends Block<ButtonProps> {
   static componentName = 'Button';
 
   constructor({ text, onClick, className = '', type = 'button' }: ButtonProps) {

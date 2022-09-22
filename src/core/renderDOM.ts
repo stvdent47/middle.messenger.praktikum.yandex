@@ -7,8 +7,5 @@ export function renderDOM(rootSelector: string, block: Block) {
     throw new Error('No root element is found');
   }
 
-  root.innerHTML = '';
-  root?.appendChild(block.getContent());
-
-  return root;
+  root.replaceChildren(block.getContent());
 }

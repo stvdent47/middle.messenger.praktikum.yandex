@@ -1,0 +1,53 @@
+.modal__chatConfig {
+  position: absolute;
+  background-color: #fff;
+  top: 65px;
+  right: 10px;
+  width: 210px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 14%);
+  border-radius: 12px;
+}
+
+.chatConfig__optionList {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 15px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.chatConfig__option {
+  display: flex;
+  align-items: center;
+  margin: 0 15px 10px;
+
+  &:last-of-type {
+    margin: 0 15px;
+  }
+}
+
+.chatConfig__optionIcon {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #3369f3;
+  border-radius: 50%;
+  object-fit: none;
+}
+
+.chatConfig__optionButton {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--black);
+  background-color: #fff;
+  border: none;
+  margin: 0 0 0 12px;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

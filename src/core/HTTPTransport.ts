@@ -18,7 +18,7 @@ export type TRequestOptions = {
 
 function queryStringify(data: TRequestData) {
   if (!data) {
-    return;
+    return '';
   }
   let str = '?';
 
@@ -29,31 +29,11 @@ function queryStringify(data: TRequestData) {
 }
 
 export class HTTPTransport {
-  private readonly _parentPath: string;
+  readonly #parentPath: string = '';
 
-  constructor(_parentPath: string = '') {
-    this._parentPath = _parentPath;
+  constructor(_parentPath: string) {
+    this.#parentPath = _parentPath;
   }
-
-  public get = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.GET });
-  };
-
-  public post = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.POST });
-  };
-
-  public put = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.PUT });
-  };
-
-  public patch = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.PATCH });
-  };
-
-  public delete = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.DELETE });
-  };
 
   request = (url: string, options: TRequestOptions): any => {
     const {
@@ -66,17 +46,16 @@ export class HTTPTransport {
 
     const query =
       method === METHODS.GET ? queryStringify(data as TRequestData) : '';
-
     return new Promise((resolve, reject) => {
       const xhr = new window.XMLHttpRequest();
 
-      xhr.open(method, this._parentPath + url + query);
+      xhr.open(method, this.#parentPath + url + query);
 
       if (withCredentials) {
         xhr.withCredentials = true;
       }
 
-      Object.entries(headers).forEach(([key, value]) => {
+      Object.entries(headers).forEach(([key, value]: [string, string]) => {
         xhr.setRequestHeader(key, value);
       });
 
@@ -100,6 +79,26 @@ export class HTTPTransport {
       }
     });
   };
+
+  public get = (url: string, options = {}): Promise<XMLHttpRequest> => {
+    return this.request(url, { ...options, method: METHODS.GET });
+  };
+
+  public post = (url: string, options = {}): Promise<XMLHttpRequest> => {
+    return this.request(url, { ...options, method: METHODS.POST });
+  };
+
+  public put = (url: string, options = {}): Promise<XMLHttpRequest> => {
+    return this.request(url, { ...options, method: METHODS.PUT });
+  };
+
+  public patch = (url: string, options = {}): Promise<XMLHttpRequest> => {
+    return this.request(url, { ...options, method: METHODS.PATCH });
+  };
+
+  public delete = (url: string, options = {}): Promise<XMLHttpRequest> => {
+    return this.request(url, { ...options, method: METHODS.DELETE });
+  };
 }
 
-export default new HTTPTransport();
+export default new HTTPTransport('https://ya-praktikum.tech/api/v2');

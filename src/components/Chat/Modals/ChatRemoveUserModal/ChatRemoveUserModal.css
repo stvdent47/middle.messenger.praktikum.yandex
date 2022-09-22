@@ -1,0 +1,39 @@
+.modal__chatRemoveUser {
+  position: relative;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 14%);
+  border-radius: 12px;
+}
+
+.modal__chatRemoveUserList {
+  list-style-type: none;
+  margin: 0 30px 40px;
+  padding: 0;
+}
+
+.modal__chatRemoveUserListItem {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 10px;
+}
+
+.modal__chatRemoveUserButton {
+  width: 22px;
+  height: 22px;
+  background-image: url(../../../../static//img/chatIconCross.svg);
+  background-color: transparent;
+  background-position: center;
+  border: 1.5px solid #3369f3;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -3,19 +3,28 @@
   "version": "1.0.0",
   "description": "### Откройте pull request в ветку main из ветки, где вы разрабатывали проект, и добавьте ссылку на этот pr в README.md в ветке main.  ### ВАЖНО: pull request должен называться “Sprint i” (i — номер спринта).",
   "scripts": {
-    "dev": "parcel src/index.html --no-source-maps",
+    "dev": "parcel src/index.html",
     "build": "rm -rf dist && parcel build src/index.html --no-source-maps",
-    "start": "rm -rf dist && parcel build src/index.html --no-source-maps --no-cache && node ./src/app.js"
+    "start": "rm -rf dist && parcel build src/index.html --no-source-maps --no-cache && node ./src/app.js",
+    "stylelint": "npx stylelint '**/*.css'"
   },
   "alias": {
+    "api": "./src/api",
     "components": "./src/components",
     "components-ui": "./src/components-ui",
+    "constants": "./src/constants",
     "core": "./src/core",
     "data": "./src/data",
     "helpers": "./src/helpers",
+    "hocs": "./src/hocs",
+    "models": "./src/models",
     "pages": "./src/pages",
+    "services": "./src/services",
     "static": "./src/static",
-    "styles": "./src/styles"
+    "store": "./src/store",
+    "styles": "./src/styles",
+    "typings": "./src/typings",
+    "utils": "./src/utils"
   },
   "repository": {
     "type": "git",

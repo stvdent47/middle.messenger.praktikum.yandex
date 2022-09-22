@@ -1,0 +1,61 @@
+.chatFooter {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-top: 1px solid var(--lightGray);
+  box-sizing: border-box;
+}
+
+.chatFooter__buttonAttachment {
+  width: 34px;
+  height: 34px;
+  background-color: #fff;
+  border: none;
+  background-image: url(../../../static/img/chatButtonAttachment.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.chatFooter__messageForm {
+  display: flex;
+  width: 100%;
+}
+
+.chatFooter__messageInput {
+  width: 100%;
+  height: 32px;
+  background-color: var(--lightGray);
+  border: none;
+  border-radius: 30px;
+  padding: 0 30px;
+  margin: 0 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  outline: none;
+  word-break: break-word;
+
+  &::placeholder {
+    color: var(--gray);
+  }
+}
+
+.chatFooter__buttonSend {
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  border: none;
+  background-image: url(../../../static/img/buttonIconArrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: rotate(180deg);
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

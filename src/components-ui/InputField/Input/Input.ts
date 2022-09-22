@@ -2,7 +2,7 @@ import { Block } from 'core/Block';
 
 type InputProps = {
   name: string;
-  className: string;
+  className?: string;
   inputType?: 'text' | 'password' | 'email';
   isDisabled?: boolean;
   inputPlaceholder?: string;

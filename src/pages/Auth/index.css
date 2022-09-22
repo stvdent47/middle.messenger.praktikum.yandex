@@ -97,6 +97,10 @@
   background: var(--blue);
   border: none;
   border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .form__link {
@@ -106,5 +110,11 @@
   line-height: 1;
   text-decoration: none;
   color: var(--blue);
+  background-color: #fff;
   margin: 0 auto 30px;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

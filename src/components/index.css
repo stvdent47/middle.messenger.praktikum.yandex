@@ -1,0 +1,75 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 50%);
+  transition: all 0.2s linear;
+  z-index: 1;
+}
+
+.modal__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--black);
+  text-align: center;
+  margin: 40px 0 50px;
+  padding: 0;
+}
+
+.modalFormInput__inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.modalFormInput__inputLabel {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 9px;
+  color: var(--gray);
+}
+
+.modalFormInput__input {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--black);
+  padding: 8px 0 7px;
+  margin: 0 0 7px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--blue);
+}
+
+.modal__submitButton {
+  width: 280px;
+  height: 37px;
+  background-color: var(--blue);
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.modal__closeButton {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+}
