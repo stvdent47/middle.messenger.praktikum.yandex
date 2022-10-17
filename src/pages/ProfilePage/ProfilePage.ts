@@ -95,7 +95,7 @@ class ProfilePage extends Block<ProfilePageProps> {
   }
 
   protected render(): string {
-    const user = this.props.store.getState().user;
+    const { user } = this.props.store.getState();
     const avatarUrl = user?.avatar
       ? `https://ya-praktikum.tech/api/v2/resources${user.avatar}`
       : profileNoAvatar;

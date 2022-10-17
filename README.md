@@ -4,25 +4,27 @@
 
 ## CSS — [PostCSS](https://postcss.org/)
 
-## Сборка — [Parcel](https://parceljs.org/)
+## Сборка — [Webpack](https://webpack.js.org/)
 
 ---
 
-`npm run dev` — parcel в dev режиме
+`npm run dev` — webpack в dev режиме
 
-`npm run build` — сборка parcel
+`npm run build` — сборка webpack
 
-`npm run start` — сборка parcel + раздача статики express.js сервером
+`npm run start` — статики express.js сервером
 
 ---
 
-### Ссылка на Netlify: https://silver-pegasus-0e7252.netlify.app
+### Ссылка на Heroku: https://stvdent47-messenger.herokuapp.com/
 
 ### Ссылка на макет: https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link
 
 ---
 
 Pull requests:
+
+## [Sprint 4 Pull Request](https://github.com/stvdent47/middle.messenger.praktikum.yandex/pull/10)
 
 ## [Sprint 3 Pull Request](https://github.com/stvdent47/middle.messenger.praktikum.yandex/pull/7)
 
@@ -33,5 +35,7 @@ Pull requests:
 TODO:
 
 mapStateToProps
+
 mapDispatchToProps
+
 \_get

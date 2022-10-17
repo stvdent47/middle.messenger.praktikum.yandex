@@ -34,17 +34,31 @@ export const chatAPI = {
     }
   },
 
-  createChat: (data: CreateChatInput) =>
-    HTTPTransport.post('/chats', {
-      ...options,
-      data: JSON.stringify(new CreateChatInputDto(data)),
-    }).then(({ response }) => JSON.parse(response)),
+  createChat: async (data: CreateChatInput) => {
+    try {
+      const { response } = await HTTPTransport.post('/chats', {
+        ...options,
+        data: JSON.stringify(new CreateChatInputDto(data)),
+      });
 
-  deleteChat: (data: DeleteChatInput) =>
-    HTTPTransport.delete('/chats', {
-      ...options,
-      data: JSON.stringify(new DeleteChatInputDto(data)),
-    }).then(({ response }) => JSON.parse(response)),
+      return JSON.parse(response);
+    } catch (err) {
+      console.error({ err });
+    }
+  },
+
+  deleteChat: async (data: DeleteChatInput) => {
+    try {
+      const { response } = await HTTPTransport.delete('/chats', {
+        ...options,
+        data: JSON.stringify(new DeleteChatInputDto(data)),
+      });
+
+      return JSON.parse(response);
+    } catch (err) {
+      console.error({ err });
+    }
+  },
 
   getChatToken: (chatId: string) =>
     HTTPTransport.post(`/chats/token/${chatId}`, { ...options }).then(

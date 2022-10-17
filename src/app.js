@@ -1,12 +1,13 @@
 const express = require('express');
-const path = require('path');
+const history = require('express-history-api-fallback');
 
 const app = express();
-const PORT = 3000;
 
-app.use('/', express.static(path.join(__dirname, '../dist/')));
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static('./dist'));
+app.use(history('index.html', { root: './dist' }));
 
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
   console.info(`listening at ${PORT}`);
 });

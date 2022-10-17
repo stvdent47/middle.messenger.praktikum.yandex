@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "baseUrl": "./src",
+    "module": "CommonJS",
+    "target": "ES2016",
+    "baseUrl": "src/",
+    "outDir": "./dist",
+    "moduleResolution": "node",
     "typeRoots": ["node_modules/@types", "typings/app.d.ts"],
     "allowJs": true,
     "sourceMap": true,
-    "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -15,5 +16,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true
+  },
+  "ts-node": {
+    "files": true
   }
 }

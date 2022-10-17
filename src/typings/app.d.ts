@@ -1,6 +1,3 @@
-import { User } from 'models/auth';
-import { ChatView, MessageView } from 'models/chat';
-
 declare global {
   export type Nullable<T> = T | null;
 

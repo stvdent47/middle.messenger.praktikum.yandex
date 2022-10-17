@@ -65,7 +65,7 @@ class ChatPage extends Block<ChatPageProps> {
                 text="Profile"
                 className="chats__profileLink"
               }}}
-              <img src="${profileLinkArrow}}" alt="" class="chats__profileLinkArrow" />
+              <img src="${profileLinkArrow}" alt="" class="chats__profileLinkArrow" />
             </div>
           </div>
           <div class="chats__search">

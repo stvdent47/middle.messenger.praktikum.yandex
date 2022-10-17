@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { Block } from 'core/Block';
 
 import './ChatMessage.css';

@@ -24,7 +24,7 @@ export class ChatAddUserModal extends Block<ChatAddUserModalProps> {
             this.element?.querySelector('input');
 
           store.dispatch(addUserToChat, {
-            chatId: 111,
+            chatId: store.getState().chats.currentChat.chatId,
             userLogin: input?.value,
           });
 

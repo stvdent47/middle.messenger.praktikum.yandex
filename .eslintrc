@@ -1,3 +1,65 @@
 {
-  "extends": "airbnb-base"
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "mocha": true
+  },
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": ["./tsconfig.json"] },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "vars": "all", "argsIgnorePattern": "^_" }
+    ],
+    "class-methods-use-this": "off",
+    "consistent-return": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/extensions": "off",
+    "import/no-cycle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default": "off",
+    "import/prefer-default-export": "off",
+    "lines-between-class-members": "off",
+    "max-classes-per-file": "off",
+    "no-console": "off",
+    "no-constructor-return": "off",
+    "no-continue": "off",
+    "no-empty-function": "off",
+    "no-new": "off",
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "no-shadow": "off",
+    "no-undef": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "object-curly-newline": ["error", { "consistent": true }],
+    "operator-linebreak": "off",
+    "prefer-regex-literals": "off"
+  }
 }

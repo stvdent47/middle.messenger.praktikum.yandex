@@ -38,7 +38,7 @@ export const userAPI = {
   updateUserAvatar: (data: FormData) =>
     HTTPTransport.put('/user/profile/avatar', {
       withCredentials: true,
-      data: data,
+      data,
     }).then(({ response }) => new User(JSON.parse(response))),
 
   changePassword: (data: ChangePasswordInput) =>
