@@ -18,24 +18,24 @@ export class Route<P = any> {
     this.#props = props;
   }
 
-  navigate(pathname: string) {
+  public navigate(pathname: string) {
     if (this.match(pathname)) {
       this.#pathname = pathname;
       this.render();
     }
   }
 
-  leave() {
+  public leave() {
     if (this.#block) {
       this.#block.hide();
     }
   }
 
-  match(pathname: string) {
+  public match(pathname: string) {
     return isPathEqual(pathname, this.#pathname);
   }
 
-  render() {
+  public render() {
     renderDOM('#root', new this.#blockClass(this.#props as P));
   }
 }
@@ -53,14 +53,14 @@ export class Router {
     Router.__instance = this;
   }
 
-  use<P>(pathname: string, block: BlockClass<P>, props: Props = {}) {
+  public use<P>(pathname: string, block: BlockClass<P>, props: Props = {}) {
     const route = new Route(pathname, block, props);
     this.#routes.push(route);
 
     return this;
   }
 
-  start() {
+  public start() {
     window.onpopstate = (evt: PopStateEvent) => {
       // @ts-ignore
       this.#onRoute(evt.currentTarget?.location.pathname);
@@ -69,7 +69,7 @@ export class Router {
     this.#onRoute(window.location.pathname);
   }
 
-  getRoute(pathname: string): Route | undefined {
+  public getRoute(pathname: string): Route | undefined {
     const route = this.#routes.find((route) => route.match(pathname));
     return route || this.#routes.find((route) => route.match('*'));
   }
@@ -84,16 +84,16 @@ export class Router {
     route.render();
   }
 
-  go(pathname: string, state: unknown = {}) {
+  public go(pathname: string, state: unknown = {}) {
     this.#history.pushState(state, '', pathname);
     this.#onRoute(pathname);
   }
 
-  back() {
+  public back() {
     this.#history.back();
   }
 
-  forward() {
+  public forward() {
     this.#history.forward();
   }
 }

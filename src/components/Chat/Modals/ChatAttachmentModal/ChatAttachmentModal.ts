@@ -4,9 +4,6 @@ type ChatAttachmentModalProps = {};
 
 export class ChatAttachmentModal extends Block<ChatAttachmentModalProps> {
   static componentName: string = 'ChatAttachmentModal';
-  constructor(props: ChatAttachmentModalProps) {
-    super(props);
-  }
 
   protected render(): string {
     return `

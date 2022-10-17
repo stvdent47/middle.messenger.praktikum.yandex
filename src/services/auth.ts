@@ -1,5 +1,4 @@
-import { authAPI } from 'api';
-import { userAPI } from 'api/user/user';
+import { authAPI, userAPI } from 'api';
 import { Dispatch } from 'core/Store';
 import { LoginRequestInput, SignupRequestInput } from 'models/auth';
 import { responseHasError } from 'utils/apiHasError';

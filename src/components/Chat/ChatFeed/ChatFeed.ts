@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { Block } from 'core/Block';
 import { Store } from 'core/Store';
 import { deleteChat } from 'services/chats';

@@ -1,8 +1,6 @@
 import Handlebars, { HelperOptions } from 'handlebars';
 
-export function registerComponent<Props extends any>(
-  Component: BlockClass<Props>,
-) {
+export function registerComponent<Props>(Component: BlockClass<Props>) {
   Handlebars.registerHelper(
     Component.componentName,
     function (

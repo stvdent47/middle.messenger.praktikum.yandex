@@ -23,7 +23,7 @@ function queryStringify(data: TRequestData) {
   let str = '?';
 
   Object.entries(data).forEach(([key, value]) => {
-    str = str + String(key) + '=' + String(value) + '&';
+    str = `${str}${key}=${value}&`;
   });
   return str.slice(0, str.length - 1);
 }
@@ -31,8 +31,8 @@ function queryStringify(data: TRequestData) {
 export class HTTPTransport {
   readonly #parentPath: string = '';
 
-  constructor(_parentPath: string) {
-    this.#parentPath = _parentPath;
+  constructor(parentPath: string) {
+    this.#parentPath = parentPath;
   }
 
   request = (url: string, options: TRequestOptions): any => {
@@ -47,7 +47,7 @@ export class HTTPTransport {
     const query =
       method === METHODS.GET ? queryStringify(data as TRequestData) : '';
     return new Promise((resolve, reject) => {
-      const xhr = new window.XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
 
       xhr.open(method, this.#parentPath + url + query);
 
@@ -80,25 +80,20 @@ export class HTTPTransport {
     });
   };
 
-  public get = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.GET });
-  };
+  public get = (url: string, options = {}): Promise<XMLHttpRequest> =>
+    this.request(url, { ...options, method: METHODS.GET });
 
-  public post = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.POST });
-  };
+  public post = (url: string, options = {}): Promise<XMLHttpRequest> =>
+    this.request(url, { ...options, method: METHODS.POST });
 
-  public put = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.PUT });
-  };
+  public put = (url: string, options = {}): Promise<XMLHttpRequest> =>
+    this.request(url, { ...options, method: METHODS.PUT });
 
-  public patch = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.PATCH });
-  };
+  public patch = (url: string, options = {}): Promise<XMLHttpRequest> =>
+    this.request(url, { ...options, method: METHODS.PATCH });
 
-  public delete = (url: string, options = {}): Promise<XMLHttpRequest> => {
-    return this.request(url, { ...options, method: METHODS.DELETE });
-  };
+  public delete = (url: string, options = {}): Promise<XMLHttpRequest> =>
+    this.request(url, { ...options, method: METHODS.DELETE });
 }
 
 export default new HTTPTransport('https://ya-praktikum.tech/api/v2');

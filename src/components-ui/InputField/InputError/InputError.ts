@@ -5,14 +5,10 @@ type InputErrorProps = {
   className: string;
 };
 
-export class InputError extends Block {
+export class InputError extends Block<InputErrorProps> {
   static componentName: string = 'InputError';
 
-  constructor(props: InputErrorProps) {
-    super(props);
-  }
-
   protected render(): string {
-    return `<p class="{{ className }}__inputError">{{ errorText }}</p>`;
+    return '<p class="{{ className }}__inputError">{{ errorText }}</p>';
   }
 }

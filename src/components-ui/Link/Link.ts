@@ -11,7 +11,7 @@ type LinkProps = {
 export class Link extends Block<LinkProps> {
   static componentName: string = 'Link';
 
-  constructor({ text, to, className, router }: LinkProps) {
+  constructor({ router, to, text, className }: LinkProps) {
     super({
       text,
       to,

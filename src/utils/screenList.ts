@@ -1,10 +1,10 @@
 import ChatPage from 'pages/ChatsPage/ChatsPage';
 import LoginPage from 'pages/Auth/LoginPage/LoginPage';
 import ProfilePage from 'pages/ProfilePage/ProfilePage';
+import ChangePasswordPage from 'pages/ProfilePage/ChangePasswordPage/ChangePasswordPage';
 import RegisterPage from 'pages/Auth/RegisterPage/RegisterPage';
 
 import { ErrorPage } from 'pages/ErrorPage/ErrorPage';
-import ChangePasswordPage from 'pages/ProfilePage/ChangePasswordPage/ChangePasswordPage';
 
 export enum Screens {
   Login = 'login',
@@ -17,7 +17,7 @@ export enum Screens {
   ServerError = 'serverError',
 }
 
-const screenMap: Record<Screens, BlockClass<any>> = {
+const screenMap: Record<Screens, BlockClass<never>> = {
   [Screens.Login]: LoginPage,
   [Screens.Register]: RegisterPage,
   [Screens.Chats]: ChatPage,

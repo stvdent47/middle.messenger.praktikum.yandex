@@ -1,7 +1,6 @@
 import Handlebars from 'handlebars';
 import { v4 as uuidv4 } from 'uuid';
-
-import { EventBus } from './eventBus';
+import { EventBus } from 'core/eventBus';
 
 type Events = Values<typeof Block.EVENTS>;
 
